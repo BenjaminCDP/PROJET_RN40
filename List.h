@@ -1,4 +1,3 @@
-#ifndef __LIST_H__
 #define __LIST_H__
 
 #include <stdio.h>
@@ -15,7 +14,7 @@ typedef struct elem{
 typedef element * List;
 
 //Méthode pour initialiser la liste à un nombre
-List init(char* number)
+List create_list(char* number)
 {
 	List new;
 	new=(element *)malloc(sizeof(element));
@@ -30,7 +29,7 @@ List init(char* number)
 //Méthode pour ajouter un nombre en tête de liste
 List add_head(List old, char* number)
 {
-	List new=init(number);
+	List new=create_list(number);
 	if(new) //test pour voir si la mémoire a bien été allouée
 	{
 		new->next=old;
@@ -41,20 +40,23 @@ List add_head(List old, char* number)
 //Méthode pour ajouter un nombre en fin de liste
 List add_tail(List old, char* number)
 {
-	List new=init(number);
+	List oldmod;
+	List new=create_list(number);
 	if(old==NULL)
-		return new;
+	{
+		old=new;
+	}
 	else
 	{
-		List oldmod=old;
-		while(oldmod!=NULL)
+		oldmod=old;
+		while(oldmod->next!=NULL)
 			oldmod=oldmod->next;
 		oldmod->next=new;
-		return old;
 	}
+	return old;
 }
 
-// retourne le nombre à la position n dans la liste
+//Méthode qui retourne le nombre à la position n dans la liste
 char* at(List list,int n)
 {
 	if(n==0)//premier élément de la liste
@@ -70,6 +72,15 @@ char* at(List list,int n)
 		return listmod->num;
 	}
 }
+//Méthode qui renvoi la longueur de la liste
+int length(List l)
+{
+	if(l==NULL)
+		return 0;
+	else
+		return 1+length(l->next);
+}
+
 
 //affiche la liste
 void display(List list)
@@ -78,7 +89,7 @@ void display(List list)
 	printf("[  ");
 	while(listmod!=NULL)
 	{
-		printf("&s ",listmod->num);
+		printf("%s ",listmod->num);
 		listmod=listmod->next;
 	}
 	printf("]\n");
