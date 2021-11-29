@@ -11,4 +11,12 @@ Seaux init(int B)
 	return new;
 }
 
+Seaux tri(List list,Seaux seaux)
+{
+	size_t tailleNbr=strlen(at(list,0));// pour avoir la taille des nombres de la liste à triée car ils ont la même taille d'après l'énoncé
+	for(int i=0;i<tailleNbr;i++)
+	{
+		
+	}
+}
 
