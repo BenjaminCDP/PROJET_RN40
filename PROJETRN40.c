@@ -5,7 +5,7 @@ int main(int argc, char** argv)// argc c'est la taille de la liste à triée, et
 {
 	int B;
 	List listeNbr=NULL; //la liste qui contient les nombres non triés
-	for(int i=2;i<argc;i++)
+	for(int i=1;i<argc;i++)
 	{
 		if (strlen(argv[i])>10)// On teste si le nombre est de plus de 10 chiffres
 		{
@@ -28,16 +28,8 @@ int main(int argc, char** argv)// argc c'est la taille de la liste à triée, et
 	 	return EXIT_FAILURE;
 	}
 	Seaux seaux=init(B);
-	// listeNbr=add_head(listeNbr,"40280\0");
-	// listeNbr=add_tail(listeNbr,"220429\0");
-	// listeNbr=add_tail(listeNbr,"20559\0");
-	// listeNbr=add_tail(listeNbr,"40359\0");
-	// printf("%s\n",at(listeNbr,0));
-	// printf("Taille de la liste : %d\n",length(listeNbr));
+	listeNbr=tri(listeNbr,seaux,B);
 	display(listeNbr);
-	printf("%lu",strlen(at(listeNbr,0)));
-	
-	
 
 	//free(seaux);
 	return EXIT_SUCCESS;

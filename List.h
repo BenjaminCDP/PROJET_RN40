@@ -56,6 +56,21 @@ List add_tail(List old, char* number)
 	return old;
 }
 
+//Méthode qui supprime un élément en tête de liste
+List remove_head(List l)
+{
+	List listemodifie;
+	listemodifie=l;
+	if(l==NULL)
+		listemodifie=NULL;
+	else
+	{
+		listemodifie=l->next;
+		free(l);	
+	}
+	return listemodifie;
+}
+
 //Méthode qui retourne le nombre à la position n dans la liste
 char* at(List list,int n)
 {
