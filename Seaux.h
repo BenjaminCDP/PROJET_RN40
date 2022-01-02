@@ -94,37 +94,7 @@ Seaux tri_aux(List list,Seaux seaux,int j)
 	return seaux;
 }
 
-//Méthode pour accéder à un chiffre du premier nombre dans un seau
-// int atS(Seaux seaux,int positionSeaux,int positionNombre)
-// {
-// 	return ((seaux[positionSeaux]->num)[positionNombre]-'0');
-// }
 
-
-//Méthode de tri principale après avoir initialisé les seaux
-// Seaux tri(List list, Seaux seaux, int B)
-// {
-// 	size_t tailleNbr=strlen(list->num); // pour avoir la taille des nombres de la liste à triée car ils ont la même taille d'après l'énoncé
-// 	for(int j=(tailleNbr-2);j>=0;j--)
-// 	{
-// 		for(int i=0;i<B;i++)
-// 		{
-// 			while(seaux[i]!=NULL)
-// 			{
-// 				if(atS(seaux,i,j)!=i)
-// 				{
-// 					seaux[atS(seaux,i,j)]=add_tail(seaux[atS(seaux,i,j)],seaux[i]->num);
-// 					seaux[i]=remove_head(seaux[i]);
-// 				}
-// 				else
-// 				{
-// 					seaux[i]=seaux[i]->next;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return seaux;
-// }
 
 // Méthode qui regroupe les seaux en une liste
 List tri_regroup(List list,Seaux seaux,int B)
@@ -141,7 +111,7 @@ List tri_regroup(List list,Seaux seaux,int B)
 	return list;
 }
 
-// Méthode qui regroupe l'action de tri sur un chiffre et de regroupement, c'est le tri final
+// Méthode qui regroupe l'action de tri sur un chiffre et l'action de regroupement, c'est le tri final
 List tri(List list,Seaux seaux,int B)
 {
 	size_t tailleNbr=strlen(list->num);
@@ -154,15 +124,6 @@ List tri(List list,Seaux seaux,int B)
 }
 
 
-// //Méthode pour afficher les seaux
-// void printSeaux(Seaux seaux,int B)
-// {
-// 	for(int i=0;i<B;i++)
-// 	{
-// 		display(seaux[i]);
-// 		printf("\n");
-// 	}
-// }
 
 
 

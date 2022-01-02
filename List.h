@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Définition d'une liste de nombre (un nombre étant représenté par un tableau de charactères(ou string tmtc))
+//Définition d'une liste de nombre (un nombre étant représenté par un tableau de charactères(ou string ))
 typedef struct elem{
 	char * num;
 	struct elem * next;

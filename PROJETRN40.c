@@ -12,8 +12,8 @@ int main(int argc, char** argv)// argc c'est la taille de la liste à triée, et
 			perror("Un entier de de plus de 10 chiffres a été entré. Oops");
 			return EXIT_FAILURE;
 		}
-		char* str=malloc(strlen(argv[i]));// on crée un string (ou une jsp) et on alloue l'espace mémoire qui est la longueur de argv[i]
-		sprintf(str,"%s",argv[i]);			//puis sprintf pour foutre le machin dans le truc tmtc
+		char* str=malloc(strlen(argv[i]));// on crée un string et on alloue l'espace mémoire qui est la longueur de argv[i]
+		sprintf(str,"%s",argv[i]);			//puis sprintf pour mettre str dans argv[i] 
 		listeNbr=add_tail(listeNbr,str);				
 	}
 
@@ -31,6 +31,5 @@ int main(int argc, char** argv)// argc c'est la taille de la liste à triée, et
 	listeNbr=tri(listeNbr,seaux,B);
 	display(listeNbr);
 
-	//free(seaux);
 	return EXIT_SUCCESS;
 }
